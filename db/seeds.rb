@@ -1,6 +1,7 @@
 # This will delete any existing rows from the venues and bands tables
 # so you can run the seed file multiple times without having duplicate entries in your database
 puts "Deleting Venue/Band data..."
+Concert.destroy_all
 Venue.destroy_all
 Band.destroy_all
 
@@ -15,6 +16,11 @@ la_band = Band.create(name: "Muna", hometown: "LA")
 chi_band = Band.create(name: "Noname", hometown: "Chicago")
 
 puts "Creating Concerts..."
+ Concert.create(
+    band_id:Band.all.sample.id, 
+    venue_id:Venue.all.sample.id,
+    date: "2022-01-06"
+)
 # ****************************************************************
 # * TODO: create concerts! Remember, a concert belongs to a band *
 # * and a concert belongs to a venue.                            *

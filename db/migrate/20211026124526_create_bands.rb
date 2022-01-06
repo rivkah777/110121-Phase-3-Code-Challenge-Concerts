@@ -3,6 +3,11 @@ class CreateBands < ActiveRecord::Migration[6.1]
     create_table :bands do |t|
       t.string :name
       t.string :hometown
+
+
+
+
+      
     end
   end
 end
